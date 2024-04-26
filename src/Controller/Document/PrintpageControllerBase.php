@@ -272,6 +272,18 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
             $statusUpdate = Processor::getInstance()->getStatusUpdate($document->getId());
         }
 
+
+        // Workaround for a bug which happens when the local filesystem is using a NFS with cache.
+        // This invalidates the cache and the file_exists() function returns the correct value.
+        // TODO: check if there are any side effects
+        try {
+            if ($dh = opendir(dirname($document->getPdfFileName()))) {
+                closedir($dh);
+            }
+        } catch (\Exception) {
+        }
+
+
         return $this->adminJson([
             'activeGenerateProcess' => !empty($inProgress),
             'date' => $date,
