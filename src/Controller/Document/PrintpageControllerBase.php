@@ -437,19 +437,24 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
 
     /**
      * Checks if a file exists on the filesystem.
+     *
      * @param string $filePath
+     *
      * @return bool
      */
     private function checkFileExists(string $filePath): bool
     {
         $this->invalidateFsCacheFor($filePath);
+
         return file_exists($filePath);
     }
 
     /**
      * Invalidates the FS cache for a given file path by opening and closing the directory.
      * This is a workaround for a bug which happens when the local filesystem is using a NFS with cache.
+     *
      * @param string $filePath
+     *
      * @return void
      */
     private function invalidateFsCacheFor(string $filePath): void
