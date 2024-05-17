@@ -16,18 +16,18 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\WebToPrintBundle\Processor;
 
+use function array_merge;
+use function file_exists;
 use Gotenberg\Gotenberg as GotenbergAPI;
 use Gotenberg\Stream;
+use function json_decode;
+use function key_exists;
 use Pimcore\Bundle\WebToPrintBundle\Config;
 use Pimcore\Bundle\WebToPrintBundle\Event\DocumentEvents;
 use Pimcore\Bundle\WebToPrintBundle\Event\Model\PrintConfigEvent;
 use Pimcore\Bundle\WebToPrintBundle\Model\Document\PrintAbstract;
 use Pimcore\Bundle\WebToPrintBundle\Processor;
 use Pimcore\Logger;
-use function array_merge;
-use function file_exists;
-use function json_decode;
-use function key_exists;
 
 class Gotenberg extends Processor
 {
