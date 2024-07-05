@@ -29,8 +29,6 @@ class PrintConfigEvent extends Event
     /**
      * DocumentEvent constructor.
      *
-     * @param Processor $processor
-     * @param array $arguments
      */
     public function __construct(Processor $processor, array $arguments = [])
     {

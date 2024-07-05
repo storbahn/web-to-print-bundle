@@ -32,6 +32,7 @@ class ProcessorTest extends ModelTestCase
         $this->checkProcessors('Gotenberg', ['landscape' => false]);
         $this->checkProcessors('Gotenberg', ['landscape' => true]);
     }
+
     public function testChromium()
     {
         $this->checkProcessors('Chromium', ['landscape' => false]);
@@ -56,8 +57,8 @@ class ProcessorTest extends ModelTestCase
                 'javaScriptMode' => 0,
                 'addLinks' => true,
                 'appendLog' => true,
-                'enableDebugMode' => true
-            ]
+                'enableDebugMode' => true,
+            ],
         ];
         $this->checkProcessors('PdfReactor', $pdfReactorConfig);
     }
@@ -93,6 +94,7 @@ class ProcessorTest extends ModelTestCase
     private function getPDFfromProcessor(Processor $processor, array $config): string
     {
         $html =  file_get_contents(__DIR__.'/../../Support/Resources/test_web2print.html.twig');
+
         return $processor->getPdfFromString($html, $config);
     }
 
@@ -111,6 +113,7 @@ class ProcessorTest extends ModelTestCase
             Logger::debug($e->getMessage());
         }
     }
+
     private function getPdfInfoCli(): string
     {
         return Console::getExecutable('pdfinfo', true);
@@ -127,5 +130,4 @@ class ProcessorTest extends ModelTestCase
             return 'portrait';
         }
     }
-
 }

@@ -34,9 +34,7 @@ class PdfReactor extends Processor
     /**
      * returns the default web2print config
      *
-     * @param object $config
      *
-     * @return array
      */
     protected function getConfig(object $config): array
     {

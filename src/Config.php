@@ -53,7 +53,6 @@ final class Config
     }
 
     /**
-     * @return bool
      *
      * @throws \Exception
      */
@@ -72,7 +71,6 @@ final class Config
     }
 
     /**
-     * @param array $data
      *
      * @throws \Exception
      */
@@ -98,8 +96,6 @@ final class Config
     /**
      * @static
      *
-     * @return array
-     *
      * @internal
      */
     public static function getWeb2PrintConfig(): array
@@ -116,8 +112,6 @@ final class Config
 
     /**
      * @static
-     *
-     * @param array $config
      *
      * @internal
      */

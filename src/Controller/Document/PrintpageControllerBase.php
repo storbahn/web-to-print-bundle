@@ -38,10 +38,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/get-data-by-id", name="getdatabyid", methods={"GET"})
      *
-     * @param Request $request
-     *
-     * @return JsonResponse
-     *
      * @throws Exception
      */
     public function getDataByIdAction(Request $request): JsonResponse
@@ -90,10 +86,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/save", name="save", methods={"PUT", "POST"})
      *
-     * @param Request $request
-     *
-     * @return JsonResponse
-     *
      * @throws ValidationException
      */
     public function saveAction(Request $request): JsonResponse
@@ -115,7 +107,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
             }
         }
 
-        list($task, $page, $version) = $this->saveDocument($page, $request);
+        [$task, $page, $version] = $this->saveDocument($page, $request);
 
         if ($task === self::TASK_PUBLISH || $task === self::TASK_UNPUBLISH) {
             $treeData = $this->getTreeNodeConfig($page);
@@ -145,9 +137,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/add", name="add", methods={"POST"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function addAction(Request $request): JsonResponse
     {
@@ -246,10 +236,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/active-generate-process", name="activegenerateprocess", methods={"POST"})
      *
-     * @param Request $request
-     *
-     * @return JsonResponse
-     *
      * @throws Exception
      */
     public function activeGenerateProcessAction(Request $request): JsonResponse
@@ -284,10 +270,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/pdf-download", name="pdfdownload", methods={"GET"})
      *
-     * @param Request $request
-     *
-     * @return BinaryFileResponse
-     *
      * @throws Exception
      */
     public function pdfDownloadAction(Request $request): BinaryFileResponse
@@ -313,11 +295,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
 
     /**
      * @Route("/start-pdf-generation", name="startpdfgeneration", methods={"POST"})
-     *
-     * @param Request $request
-     * @param \Pimcore\Config $config
-     *
-     * @return JsonResponse
      *
      * @throws Exception
      */
@@ -352,9 +329,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/check-pdf-dirty", name="checkpdfdirty", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function checkPdfDirtyAction(Request $request): JsonResponse
     {
@@ -371,9 +346,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/get-processing-options", name="getprocessingoptions", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function getProcessingOptionsAction(Request $request): JsonResponse
     {
@@ -422,10 +395,6 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * @Route("/cancel-generation", name="cancelgeneration", methods={"DELETE"})
      *
-     * @param Request $request
-     *
-     * @return JsonResponse
-     *
      * @throws Exception
      */
     public function cancelGenerationAction(Request $request): JsonResponse
@@ -438,9 +407,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
     /**
      * Checks if a file exists on the filesystem.
      *
-     * @param string $filePath
      *
-     * @return bool
      */
     private function checkFileExists(string $filePath): bool
     {
@@ -453,9 +420,7 @@ abstract class PrintpageControllerBase extends DocumentControllerBase
      * Invalidates the FS cache for a given file path by opening and closing the directory.
      * This is a workaround for a bug which happens when the local filesystem is using a NFS with cache.
      *
-     * @param string $filePath
      *
-     * @return void
      */
     private function invalidateFsCacheFor(string $filePath): void
     {

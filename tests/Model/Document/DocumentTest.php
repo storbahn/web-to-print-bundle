@@ -22,9 +22,6 @@ use Pimcore\Model\Document;
 use Pimcore\Tests\Support\Helper\Pimcore;
 use Pimcore\Tests\Support\Test\ModelTestCase;
 
-use Pimcore\Bundle\AdminBundle\System\Config;
-use Pimcore\Tests\Support\Util\TestHelper;
-
 /**
  * Class DocumentTest
  *
@@ -35,6 +32,7 @@ use Pimcore\Tests\Support\Util\TestHelper;
 class DocumentTest extends ModelTestCase
 {
     protected ?Printcontainer $testPrintContainer = null;
+
     protected ?Printpage $testprintPage = null;
 
     public function testPrintContainer(): void
@@ -51,6 +49,7 @@ class DocumentTest extends ModelTestCase
         $document = Document::getById($document->getId());
         $this->assertInstanceOf(Printcontainer::class, $document);
     }
+
     public function testPrintPage(): void
     {
         // create
