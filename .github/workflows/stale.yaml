@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-stale-workflow:
-    uses: pimcore/workflows-collection-public/.github/workflows/stale.yml@main
+    uses: pimcore/workflows-collection-public/.github/workflows/stale.yml@stale_bot_update
