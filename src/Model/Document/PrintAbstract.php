@@ -29,21 +29,18 @@ abstract class PrintAbstract extends PageSnippet
     /**
      * @internal
      *
-     * @var int|null
      */
     protected ?int $lastGenerated = null;
 
     /**
      * @internal
      *
-     * @var string|null
      */
     protected ?string $lastGenerateMessage = null;
 
     /**
      * @internal
      *
-     * @var string|null
      */
     protected ?string $controller = 'web2print';
 
@@ -114,7 +111,6 @@ abstract class PrintAbstract extends PageSnippet
     /**
      * @internal
      *
-     * @return string
      */
     public function getLockKey(): string
     {

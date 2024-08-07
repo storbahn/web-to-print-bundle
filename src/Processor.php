@@ -59,10 +59,7 @@ abstract class Processor
     }
 
     /**
-     * @param int $documentId
-     * @param array $config
      *
-     * @return bool
      *
      * @throws \Exception
      */
@@ -95,9 +92,7 @@ abstract class Processor
     }
 
     /**
-     * @param int $documentId
      *
-     * @return string|null
      *
      * @throws Model\Element\ValidationException
      * @throws NotPreparedException
@@ -153,10 +148,7 @@ abstract class Processor
     }
 
     /**
-     * @param PrintAbstract $document
-     * @param object $config
      *
-     * @return string
      *
      * @throws \Exception
      */
@@ -180,9 +172,7 @@ abstract class Processor
     }
 
     /**
-     * @param int $documentId
      *
-     * @return PrintAbstract
      *
      * @throws \Exception
      */
@@ -204,9 +194,6 @@ abstract class Processor
     abstract public function getProcessingOptions(): array;
 
     /**
-     * @param int $documentId
-     * @param int $status
-     * @param string $statusUpdate
      *
      * @throws CancelException
      */
@@ -235,7 +222,6 @@ abstract class Processor
     }
 
     /**
-     * @param int $documentId
      *
      * @throws \Exception
      */
@@ -252,10 +238,7 @@ abstract class Processor
     }
 
     /**
-     * @param string $html
-     * @param array $params
      *
-     * @return string
      *
      * @throws \Exception
      */
@@ -293,11 +276,8 @@ abstract class Processor
     /**
      * Returns the generated pdf file. Its path or data depending supplied parameter
      *
-     * @param string $html
-     * @param array $params
      * @param bool $returnFilePath return the path to the pdf file or the content
      *
-     * @return string
      */
     abstract public function getPdfFromString(string $html, array $params = [], bool $returnFilePath = false): string;
 }

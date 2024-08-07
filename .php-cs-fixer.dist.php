@@ -3,6 +3,7 @@
 $finder = PhpCsFixer\Finder::create()
     ->in([
         __DIR__ . '/src',
+        __DIR__ . '/tests',
         __DIR__ . '/config'
     ])
 
@@ -10,9 +11,6 @@ $finder = PhpCsFixer\Finder::create()
         __DIR__ . '/tests/_output',
         __DIR__ . '/tests/Support/_generated',
     ])
-
-    // do not fix views
-    ->notName('*.html.php')
 ;
 
 // do not enable self_accessor as it breaks pimcore models relying on get_called_class()
@@ -21,6 +19,7 @@ $config->setRules([
     '@PSR1'                  => true,
     '@PSR2'                  => true,
     'array_syntax'           => ['syntax' => 'short'],
+    'list_syntax'            => ['syntax' => 'short'],
 
     'header_comment'         => [
         'comment_type' => 'PHPDoc',
@@ -54,6 +53,7 @@ $config->setRules([
     'no_leading_namespace_whitespace'     => true,
     'no_short_bool_cast'                  => true,
     'no_spaces_around_offset'             => true,
+    'no_superfluous_phpdoc_tags'          => ['allow_mixed' => true, 'remove_inheritdoc' => true],
     'no_unneeded_control_parentheses'     => true,
     'no_unused_imports'                   => true,
     'no_whitespace_before_comma_in_array' => true,

@@ -40,9 +40,7 @@ class SettingsController extends UserAwareController
     /**
      * @Route("/get-web2print", name="pimcore_bundle_web2print_settings_getweb2print", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function getWeb2printAction(Request $request): JsonResponse
     {
@@ -60,9 +58,7 @@ class SettingsController extends UserAwareController
     /**
      * @Route("/set-web2print", name="pimcore_bundle_web2print_settings_setweb2print", methods={"PUT"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function setWeb2printAction(Request $request): JsonResponse
     {
@@ -85,9 +81,7 @@ class SettingsController extends UserAwareController
     /**
      * @Route("/test-web2print", name="pimcore_bundle_web2print_settings_testweb2print", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return Response
      */
     public function testWeb2printAction(Request $request): Response
     {

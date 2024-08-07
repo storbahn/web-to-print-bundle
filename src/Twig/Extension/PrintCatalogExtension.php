@@ -37,8 +37,6 @@ class PrintCatalogExtension extends AbstractExtension
     /**
      * PrintCatalogExtension constructor.
      *
-     * @param Translator $translator
-     * @param Placeholder $placeholderHelper
      */
     public function __construct(Translator $translator, Placeholder $placeholderHelper)
     {

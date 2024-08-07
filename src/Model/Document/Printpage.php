@@ -21,8 +21,5 @@ namespace Pimcore\Bundle\WebToPrintBundle\Model\Document;
  */
 class Printpage extends PrintAbstract
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $type = 'printpage';
 }

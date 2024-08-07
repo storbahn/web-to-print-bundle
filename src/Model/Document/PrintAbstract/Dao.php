@@ -30,7 +30,6 @@ class Dao extends Document\PageSnippet\Dao
     /**
      * Contains the valid database columns
      *
-     * @var array
      */
     protected array $validColumnsPage = [];
 
@@ -46,7 +45,6 @@ class Dao extends Document\PageSnippet\Dao
     /**
      * Get the data for the object by the given id, or by the id which is set in the object
      *
-     * @param int|null $id
      *
      * @throws \Exception
      */

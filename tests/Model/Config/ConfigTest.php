@@ -16,14 +16,15 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\WebToPrintBundle\Tests\Model\Config;
 
-use Pimcore\Tests\Support\Test\ModelTestCase;
 use Pimcore\Bundle\WebToPrintBundle\Config;
+use Pimcore\Tests\Support\Test\ModelTestCase;
 
 class ConfigTest extends ModelTestCase
 {
-    public function testConfig(){
+    public function testConfig()
+    {
         $config = Config::get();
-        $this->assertFalse(isset($config['pdfreactorServer']),  'Check if pdfreactorServer config is undefined');
+        $this->assertFalse(isset($config['pdfreactorServer']), 'Check if pdfreactorServer config is undefined');
 
         $config['pdfreactorServer'] = 'cloud.pdfreactor.com';
         $config['pdfreactorProtocol'] = 'https';
